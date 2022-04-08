@@ -61,6 +61,7 @@ export type Connection = {
 
 export type Query = {
   __typename?: 'Query';
+  getOptimizedQuery?: Maybe<Scalars['String']>;
   getCollection: Collection;
   getCollections: Array<Collection>;
   node: Node;
@@ -71,6 +72,11 @@ export type Query = {
   getPageList: PageConnection;
   getPostDocument: PostDocument;
   getPostList: PostConnection;
+};
+
+
+export type QueryGetOptimizedQueryArgs = {
+  queryString: Scalars['String'];
 };
 
 
@@ -95,6 +101,7 @@ export type QueryGetDocumentListArgs = {
   after?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
+  sort?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -108,6 +115,7 @@ export type QueryGetPageListArgs = {
   after?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
+  sort?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -121,6 +129,7 @@ export type QueryGetPostListArgs = {
   after?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
+  sort?: InputMaybe<Scalars['String']>;
 };
 
 export type DocumentConnectionEdges = {
@@ -155,6 +164,7 @@ export type CollectionDocumentsArgs = {
   after?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
+  sort?: InputMaybe<Scalars['String']>;
 };
 
 export type DocumentNode = PageDocument | PostDocument;
